@@ -9,15 +9,9 @@ function getHumanChoice() {
     userInput = userInput.toLowerCase();
     return userInput;
 }
-
+let humanscore = 0;
+let computerscore = 0;
 let humanChoice = getHumanChoice();
-let computerChoice = getComputerChoice();
-
-let result = determineWinner(humanChoice, computerChoice);
-console.log("You chose: " + humanChoice);
-console.log("Computer chose: " + computerChoice);
-console.log(result);
-
 
 
  function determineWinner(humanChoice, computerChoice) {
@@ -28,8 +22,19 @@ console.log(result);
         (humanChoice === "paper" && computerChoice === "rock") ||
         (humanChoice === "scissors" && computerChoice === "paper")
     ) {
-        return "You win!";
+        humanscore++;
     } else {
-        return "Computer wins!";
+       computerscore;
     }
+}
+function playRound() {
+    let humanChoice = getHumanChoice();
+    let computerChoice = getComputerChoice();
+    let result = determineWinner(humanChoice, computerChoice);
+    console.log("Human Score: " + humanscore);
+    console.log("Computer Score: " + computerscore);
+}
+
+ for (let i = 0; i < 5; i++) {
+    playRound();
 }
